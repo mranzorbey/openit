@@ -64,6 +64,7 @@
 	        	<li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 	        <?php } else { ?>
 	        	<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	        	<li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 	        <?php } ?>
 	      </ul>
 	    </div>
