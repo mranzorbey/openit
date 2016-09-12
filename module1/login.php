@@ -18,7 +18,15 @@ if(isset($_POST) && !empty($_POST)){
 		echo $e->getMessage();
 	}
 
-	$res = $db->query("SELECT * FROM users");
+	$stmt = $db->prepare("SELECT id FROM users WHERE name=:name AND password=:password");
+
+	$res=$stmt->execute([
+		'name' => $username,
+		'password' => $password
+	]);
+
+	echo $res;
+	die();
 
 	if($username=='azamat' && $password=='asd'){
 		$_SESSION['user_id']=1;
