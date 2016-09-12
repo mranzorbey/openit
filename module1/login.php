@@ -20,8 +20,8 @@ if(isset($_POST) && !empty($_POST)){
 		$username, $password
 	]);
 
-	if($res=$stmt->fetch(PDO::FETCH_ASSOC)){
-		$_SESSION['user_id']=$res;
+	if($res=$stmt->fetch(PDO::FETCH_OBJ)){
+		$_SESSION['user_id']=$res->id;
 		header('Location: index.php');
 		exit();
 	}else{

@@ -10,13 +10,14 @@ if(!isset($_SESSION['user_id'])){
 
 require_once('helpers/dbconnect.php');
 
-$stmt=$db->prepare("SELECT (name, email) FROM users WHERE id= ? ");
+$stmt=$db->prepare("SELECT name, email FROM users WHERE id= ? ");
 
 $stmt->execute([
 	$_SESSION['user_id']
 ]);
 
 $user=$stmt->fetch(PDO::FETCH_OBJ);
+
 ?>
 
 <?php require_once('layouts/header.php');?>
