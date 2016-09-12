@@ -12,7 +12,6 @@ if(isset($_POST) && !empty($_POST)){
 	$username=stripcslashes($_POST['name']);
 	$password=stripcslashes($_POST['password']);
 
-
 	try {
 		$db = new PDO('mysql:host=localhost;dbname=openit', 'root', '');
 	} catch (PDOException $e) {
