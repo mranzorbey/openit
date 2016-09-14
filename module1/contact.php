@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require_once('helpers/protect_from_guest.php');
 
@@ -26,6 +26,24 @@ if(isset($_GET) && !empty($_GET['id'])){
 ?>
 
 <?php require_once('layouts/header.php');?>
+
+	<form action="contacts.php" method="POST">
+		<div class="form-group">
+			<label for="">Имя</label>
+			<input type="text" name="name" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label for="">Фамилия</label>
+			<input type="text" name="surname" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label for="">Email</label>
+			<input type="text" name="email" class="form-control" />
+		</div>
+		<div class="form-group">
+			<button class="btn btn-default">Добавить</button>
+		</div>
+	</form>
 
 	<table class="table table-stripped">
 		<thead>

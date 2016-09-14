@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var $contacts=$('.contacts');
+	/*var $contacts=$('.contacts');
 
 	$contacts.find('button').on('click',function(e){
 		e.preventDefault(), $input=$contacts.find('input');
@@ -19,7 +19,7 @@ $(document).ready(function(){
 		res+=name+'</label><span class="remove"> x </span>';
 		res+='</li>';
 		return res;
-	}
+	}*/
 
 
 });
