@@ -1,5 +1,5 @@
 ﻿<?php
-require_once('protect_from_guest.php');
+require_once('helpers/protect_from_guest.php');
 
 require_once('helpers/dbconnect.php');
 
