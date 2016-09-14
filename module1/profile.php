@@ -57,7 +57,7 @@ $user=$stmt->fetch(PDO::FETCH_OBJ);
 	            </div>
 	            <div class="wrapper">
 		            <span class="group-btn">     
-		                <button href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button>
+		                <button href="#" class="btn btn-primary btn-md">save updates <i class="fa fa-sign-in"></i></button>
 		            </span>
 	            </div>
             </form>
