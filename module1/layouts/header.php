@@ -74,6 +74,7 @@
 		    <div class="col-sm-2 sidenav">
 		      <p><a href="profile.php">Profile</a></p>
 		      <p><a href="send.php">Send email</a></p>
+		      <p><a href="contacts.php">Contacts</a></p>
 		    </div>
 		    <div class="col-sm-8 text-left">
 	<?php } ?>
