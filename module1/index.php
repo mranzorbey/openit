@@ -1,12 +1,5 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
-}
-
-if(!isset($_SESSION['user_id'])){
-	header("Location: login.php");
-	exit();
-}
+require_once('helpers/protect_from_guest.php');
 
 require_once('helpers/dbconnect.php');
 

@@ -1,7 +1,6 @@
 <?php 
-	if(!isset($_SESSION)){
-		session_start();
-	}
+
+	require_once('helpers/protect_from_guest.php');
 
 	session_destroy();
 

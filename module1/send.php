@@ -1,8 +1,7 @@
 ﻿<?php 
-	
-if(!isset($_SESSION)){
-	session_start();
-}
+require_once('protect_from_guest.php');
+
+require_once('helpers/setsession.php');
 
 if(!isset($_SESSION['user_id'])){
 	header('Location: index.php');

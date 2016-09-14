@@ -1,12 +1,5 @@
 <?php
-if(!isset($_SESSION)){
-	session_start();
-}
-
-if(isset($_SESSION['user_id'])){
-	header('Location: index.php');
-	exit();
-}
+require_once('helpers/protect_from_logined.php');
 
 if(isset($_POST) && !empty($_POST)){
 	$username=stripcslashes($_POST['name']);

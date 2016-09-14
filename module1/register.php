@@ -1,21 +1,12 @@
 ﻿<?php
-	
-	if(!isset($_SESSION)){
-		session_start();
-	}
+	require_once('helpers/protect_from_logined.php');
 
-	if(isset($_SESSION['user_id'])){
-		header('Location: index.php');
-		exit();
-	}
-
+	require_once('helpers/dbconnect.php');
 
 	if(isset($_POST) && !empty($_POST)){
 		$name=stripcslashes($_POST['name']);
 		$password=stripcslashes(sha1($_POST['password']));
 		$email=stripcslashes($_POST['email']);
-
-		require_once('helpers/dbconnect.php');
 
 		$stmt=$db->prepare("INSERT INTO users(name, password, email) VALUES(?,?,?)");
 
