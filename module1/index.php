@@ -1,5 +1,10 @@
 <?php
-require_once('helpers/protect_from_guest.php');
+require_once('helpers/setsession.php');
+
+if(!isset($_SESSION['user_id'])){
+	header('Location: login.php');
+	exit();
+}
 
 require_once('helpers/dbconnect.php');
 
