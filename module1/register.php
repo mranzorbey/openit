@@ -29,7 +29,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-offset-5 col-md-3">
-            <form class="form-login" action="register.php" method="POST">
+            <form class="form-login" action="" method="POST">
 	            <h4>Register form</h4>
 	            <input type="text" id="userName" name="name" class="form-control input-sm chat-input" placeholder="username" />
 	            </br>

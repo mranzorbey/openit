@@ -18,12 +18,10 @@ if(isset($_POST) && !empty($_POST)){
 ?>
 
 <?php require_once('layouts/header.php');?>
-	<form action="send.php" method="POST">
+	<form action="" method="POST">
 		<div class="row">
 			<div class="col-sm-4 col-md-4">
-				<div class="contacts">
-					
-				</div>
+				
 			</div>
 			<div class="col-sm-8 col-md-8">
 				<div class="form-group">

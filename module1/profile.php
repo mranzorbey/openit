@@ -41,7 +41,7 @@ $user=$stmt->fetch(PDO::FETCH_OBJ);
 <div class="container">
     <div class="row">
         <div class="col-md-offset-5 col-md-3 col-sm-5">
-            <form class="form-login" action="register.php" method="POST">
+            <form class="form-login" action="" method="POST">
 	            <h4>Change profile</h4>
 	            <div class="form-group">
 	            	<label for="userName">Имя</label>

@@ -8,6 +8,20 @@ if(isset($_GET) && !empty($_GET['id'])){
 
 	$id=$_GET['id'];
 
+	if(isset($_POST) && !empty($_POST)){
+		$name=stripcslashes($_POST['name']);
+		$surname=stripcslashes($_POST['surname']);
+		$email=stripcslashes($_POST['email']);
+		$stmt=$db->prepare("INSERT INTO contacts(name,surname,email,contact_list_id) VALUES(?,?,?,?)");
+
+		$stmt->execute([
+			$name,
+			$surname,
+			$email,
+			$id
+		]);
+	}
+
 	$stmt=$db->prepare("SELECT c.* FROM contacts as c INNER JOIN contact_list as c_l ON c.contact_list_id=c_l.id WHERE c_l.id=? AND c_l.user_id=?");
 	$stmt->execute([
 		$id,
@@ -27,7 +41,7 @@ if(isset($_GET) && !empty($_GET['id'])){
 
 <?php require_once('layouts/header.php');?>
 
-	<form action="contacts.php" method="POST">
+	<form action="" method="POST">
 		<div class="form-group">
 			<label for="">Имя</label>
 			<input type="text" name="name" class="form-control" />

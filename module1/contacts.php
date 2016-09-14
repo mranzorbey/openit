@@ -31,7 +31,7 @@ while($contact_list=$stmt->fetch(PDO::FETCH_OBJ)){
 
 <?php require_once('layouts/header.php');?>
 
-	<form action="contacts.php" method="POST">
+	<form action="" method="POST">
 		<div class="form-group">
 			<label for="">Название</label>
 			<input type="text" name="name" class="form-control" />

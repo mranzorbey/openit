@@ -30,7 +30,7 @@ if(isset($_POST) && !empty($_POST)){
     <div class="row">
         <div class="col-md-offset-5 col-md-3">
         	<?php include_once('layouts/errors.php');?>
-            <form class="form-login" action="login.php" method="POST">
+            <form class="form-login" action="" method="POST">
 	            <h4>Login form</h4>
 	            <input type="text" id="userName" name="name" class="form-control input-sm chat-input" placeholder="username" />
 	            </br>
