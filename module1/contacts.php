@@ -49,7 +49,7 @@ while($contact_list=$stmt->fetch(PDO::FETCH_OBJ)){
 		<tbody>
 			<?php foreach($contact_lists as $contact_list){ ?>
 				<tr>
-					<td><?= $contact_list?></td>
+					<td><?= $contact_list->name?></td>
 				</tr>
 			<?php } ?>
 		</tbody>
