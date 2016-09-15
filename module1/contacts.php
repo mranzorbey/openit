@@ -4,9 +4,10 @@ require_once('helpers/protect_from_guest.php');
 
 require_once('helpers/dbconnect.php');
 
-if($_SERVER['REQUEST_METHOD']==='DELETE'){
-	$id=$_REQUEST['id'];
+if(isset($_GET) && !empty($_GET['id'])){
+	$id=$_GET['id'];
 	$stmt=$db->prepare("DELETE FROM contact_list WHERE id=?");
+
 	$stmt->execute([
 		$id
 	]);
@@ -60,11 +61,7 @@ while($contact_list=$stmt->fetch(PDO::FETCH_OBJ)){
 					<td><?= $contact_list->name?></td>
 					<td><a href="contact.php?id=<?= $contact_list->id?>">Перейти</a></td>
 					<td>
-						<form action="" method="DELETE">
-							<input type="hidden" name="_METHOD" value="DELETE" />
-							<input type="hidden" name="id" value="<?= $contact_list->id?>" />
-							<button class="btn btn-warning">Удалить</button>
-						</form>
+						<a href="contacts.php?id=<?= $contact_list->id?>" class="btn btn-warning">Удалить</a>
 					</td>
 				</tr>
 			<?php } ?>
