@@ -36,7 +36,7 @@ $contact_lists=$db->query("SELECT c.* FROM contact_list as c INNER JOIN users as
 			<?php foreach($contact_lists as $contact_list){ ?>
 				<tr>
 					<td><?= $contact_list->name?></td>
-					<td><a href="contact.php?id=<?= $contact_list->id?>">Перейти</a></td>
+					<td><a href="contact?id=<?= $contact_list->id?>">Перейти</a></td>
 				</tr>
 			<?php } ?>
 		</tbody>
