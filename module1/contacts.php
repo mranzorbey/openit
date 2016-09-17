@@ -1,7 +1,4 @@
 ﻿<?php
-
-require_once('config/app.php');
-
 Guard::protect();
 
 if(isset($_POST) && !empty($_POST)){
@@ -19,7 +16,7 @@ $contact_lists=$db->query("SELECT c.* FROM contact_list as c INNER JOIN users as
 
 <?php require_once('layouts/header.php');?>
 
-	<form action="contacts.php" method="POST">
+	<form action="" method="POST">
 		<div class="form-group">
 			<label for="">Название</label>
 			<input type="text" name="name" class="form-control" />

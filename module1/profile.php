@@ -1,6 +1,4 @@
 ﻿<?php
-require_once('config/app.php');
-
 Guard::protect();
 
 if(isset($_POST) && !empty($_POST)){
@@ -35,7 +33,7 @@ $user=$db->query("SELECT name,password,email FROM users WHERE id=?",[
 <div class="container">
     <div class="row">
         <div class="col-md-offset-5 col-md-3 col-sm-5">
-            <form class="form-login" action="register.php" method="POST">
+            <form class="form-login" action="" method="POST">
 	            <h4>Change profile</h4>
 	            <div class="form-group">
 	            	<label for="userName">Имя</label>

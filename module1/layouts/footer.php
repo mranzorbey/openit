@@ -14,7 +14,7 @@
 	<footer class="container-fluid text-center">
 	  <p>Footer Text</p>
 	</footer>
-	<script src="public/js/jquery.min.js"></script>
-	<script src="public/js/app.js"></script>
+	<script src="<?= BASE_URL?>public/js/jquery.min.js"></script>
+	<script src="<?= BASE_URL?>public/js/app.js"></script>
 </body>
 </html>

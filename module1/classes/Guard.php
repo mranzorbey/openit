@@ -14,7 +14,7 @@ class Guard{
 	}
 
 	private static function redirect($redirect){
-		header('Location: '.$redirect.'.php');
+		header('Location: '.$redirect);
 		exit();
 	}
 }

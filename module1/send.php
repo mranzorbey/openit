@@ -1,6 +1,4 @@
 ﻿<?php 
-require_once('config/app.php');
-
 Guard::protect();
 
 if(isset($_POST) && !empty($_POST)){

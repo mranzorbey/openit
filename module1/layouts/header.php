@@ -4,7 +4,7 @@
 		<title>
 			Chimpkiller
 		</title>
-		<link rel="stylesheet" href="public/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="<?= BASE_URL ?>public/css/bootstrap.min.css"/>
 
 		  <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
@@ -58,10 +58,10 @@
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	      	<?php if(isset($_SESSION['user_id'])){?>
-	        	<li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+	        	<li><a href="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 	        <?php } else { ?>
-	        	<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	        	<li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+	        	<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	        	<li><a href="register"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
 	        <?php } ?>
 	      </ul>
 	    </div>
@@ -72,9 +72,9 @@
 		<div class="container-fluid text-center">
 		  <div class="row content">
 		    <div class="col-sm-2 sidenav">
-		      <p><a href="profile.php">Profile</a></p>
-		      <p><a href="send.php">Send email</a></p>
-		      <p><a href="contacts.php">Contacts</a></p>
+		      <p><a href="profile">Profile</a></p>
+		      <p><a href="send">Send email</a></p>
+		      <p><a href="contacts">Contacts</a></p>
 		    </div>
 		    <div class="col-sm-8 text-left">
 	<?php } ?>
