@@ -1,6 +1,4 @@
 <?php 
-Guard::protect(true,'login');
-
 $user=$db->query("SELECT name, email FROM users WHERE id= ? ",[
 		$_SESSION['user_id']
 	])->first();

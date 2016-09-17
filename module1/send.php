@@ -1,6 +1,4 @@
 ﻿<?php 
-Guard::protect();
-
 if(isset($_POST) && !empty($_POST)){
 	$contacts=stripcslashes($_POST['contacts']);
 	$title=stripcslashes($_POST['title']);
