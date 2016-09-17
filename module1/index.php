@@ -1,7 +1,7 @@
 <?php
 require_once('config/app.php');
 
-Guard::protect(false,'login');
+Guard::protect(true,'login');
 
 $user=$db->query("SELECT name, email FROM users WHERE id= ? ",[
 		$_SESSION['user_id']
