@@ -1,32 +1,20 @@
 ﻿<?php
 
-require_once('helpers/protect_from_guest.php');
+require_once('config/app.php');
 
-require_once('helpers/dbconnect.php');
+Guard::protect();
 
 if(isset($_POST) && !empty($_POST)){
 	$name=stripcslashes($_POST['name']);
-
-	$stmt=$db->prepare("INSERT INTO contact_list(name,user_id) VALUES(?,?)");
-
-	$stmt->execute([
+	$db->query("INSERT INTO contact_list(name,user_id) VALUES(?,?)",[
 		$name,
 		$_SESSION['user_id']
 	]);
 }
 
-
-$stmt=$db->prepare("SELECT c.* FROM contact_list as c INNER JOIN users as u ON u.id=c.user_id AND u.id=?");
-
-$stmt->execute([
-	$_SESSION['user_id']
-]);
-
-$contact_lists=[];
-while($contact_list=$stmt->fetch(PDO::FETCH_OBJ)){
-	$contact_lists[]=$contact_list;
-}
-
+$contact_lists=$db->query("SELECT c.* FROM contact_list as c INNER JOIN users as u ON u.id=c.user_id AND u.id=?",[
+		$_SESSION['user_id']
+	 ])->get();
 ?>
 
 <?php require_once('layouts/header.php');?>

@@ -1,21 +1,11 @@
 <?php
-require_once('helpers/setsession.php');
+require_once('config/app.php');
 
-if(!isset($_SESSION['user_id'])){
-	header('Location: login.php');
-	exit();
-}
+Guard::protect(false,'login');
 
-require_once('helpers/dbconnect.php');
-
-$stmt=$db->prepare("SELECT name, email FROM users WHERE id= ? ");
-
-$stmt->execute([
-	$_SESSION['user_id']
-]);
-
-$user=$stmt->fetch(PDO::FETCH_OBJ);
-
+$user=$db->query("SELECT name, email FROM users WHERE id= ? ",[
+		$_SESSION['user_id']
+	])->first();
 ?>
 
 <?php require_once('layouts/header.php');?>

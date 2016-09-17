@@ -1,26 +1,18 @@
 <?php
+require_once('config/app.php');
 
-require_once('helpers/protect_from_guest.php');
-
-require_once('helpers/dbconnect.php');
+Guard::protect();
 
 if(isset($_GET) && !empty($_GET['id'])){
 
 	$id=$_GET['id'];
 
-	$stmt=$db->prepare("SELECT c.* FROM contacts as c INNER JOIN contact_list as c_l ON c.contact_list_id=c_l.id WHERE c_l.id=? AND c_l.user_id=?");
-	$stmt->execute([
-		$id,
-		$_SESSION['user_id']
-	]);
-
-	$contacts=[];
-	while($contact=$stmt->fetch(PDO::FETCH_OBJ)){
-		$contacts[]=$contact;
-	}
+	$contacts=$db->query("SELECT c.* FROM contacts as c INNER JOIN contact_list as c_l ON c.contact_list_id=c_l.id WHERE c_l.id=? AND c_l.user_id=?",[
+			$id,
+			$_SESSION['user_id']
+		])->get();
 }else{
-	header('Location: contacts.php');
-	exit();
+	Redirect::to('index');
 }
 
 ?>

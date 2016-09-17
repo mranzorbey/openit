@@ -1,12 +1,7 @@
 ﻿<?php 
-require_once('helpers/protect_from_guest.php');
+require_once('config/app.php');
 
-require_once('helpers/setsession.php');
-
-if(!isset($_SESSION['user_id'])){
-	header('Location: index.php');
-	exit();
-}
+Guard::protect();
 
 if(isset($_POST) && !empty($_POST)){
 	$contacts=stripcslashes($_POST['contacts']);
