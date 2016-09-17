@@ -9,7 +9,7 @@ if(isset($_POST) && !empty($_POST)){
 
 	$res=$db->query("SELECT id FROM users WHERE name=? AND password=?",[
 			$username, $password
-		]);
+		])->first();
 
 	if($res){
 		$_SESSION['user_id']=$res->id;
