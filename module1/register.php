@@ -9,7 +9,7 @@
 				$password,
 				$email
 			]);
-		Redirect::to('index');
+		Redirect::to('home');
 	}
 
 ?>

@@ -8,7 +8,7 @@ if(isset($_GET) && !empty($_GET['id'])){
 			$_SESSION['user_id']
 		])->get();
 }else{
-	Redirect::to('index');
+	Redirect::to('home');
 }
 
 ?>
