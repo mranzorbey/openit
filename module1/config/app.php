@@ -4,18 +4,20 @@ if(!isset($_SESSION)){
 	session_start();
 }
 
-define('BASE_URL','http://localhost:8080/openit/module1/');
+define('BASE_URL','http://localhost/openit/module1/');
 
 define('SUB_URL','/openit/module1/index.php/');
 
 $middlewares=[
-	'index'    => 'guest|login',
+	'index'    => 'guest',
 	'contacts' => 'guest',
 	'contact'  => 'guest',
 	'login'    => 'logged',
 	'logout'   => 'guest',
 	'register' => 'logged',
-	'send'     => 'guest'
+	'send'     => 'guest',
+	'profile'  => 'guest',
+	'home'     => 'guest'
 ];
 
 spl_autoload_register(function ($class) {

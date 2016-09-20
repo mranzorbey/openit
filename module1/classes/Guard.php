@@ -1,20 +1,19 @@
 <?php
 
 class Guard{
-	public static function protect($guest=true, $redirect='index'){
-		if($guest){
-			if(!isset($_SESSION['user_id'])){
-				self::redirect($redirect);
-			}
-		}else{
-			if(isset($_SESSION['user_id'])){
-				self::redirect($redirect);
+	public static function protect($protect){
+		if($protect){
+			if($protect=='guest'){
+				if(!isset($_SESSION['user_id'])){
+					header('Location: login');
+					exit();
+				}
+			}else{
+				if(isset($_SESSION['user_id'])){
+					header('Location: home');
+					exit();
+				}
 			}
 		}
-	}
-
-	private static function redirect($redirect){
-		header('Location: '.$redirect);
-		exit();
 	}
 }
