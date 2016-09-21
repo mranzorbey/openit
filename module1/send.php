@@ -1,4 +1,8 @@
 ﻿<?php 
+require_once('config/app.php');
+
+Guard::protect();
+
 if(isset($_POST) && !empty($_POST)){
 	$contacts=stripcslashes($_POST['contacts']);
 	$title=stripcslashes($_POST['title']);
@@ -9,7 +13,7 @@ if(isset($_POST) && !empty($_POST)){
 ?>
 
 <?php require_once('layouts/header.php');?>
-	<form action="send.php" method="POST">
+	<form action="" method="POST">
 		<div class="row">
 			<div class="col-sm-4 col-md-4">
 				<div class="contacts">

@@ -1,4 +1,8 @@
 <?php
+require_once 'config/app.php';
+
+Guard::protect();
+
 if(isset($_GET) && !empty($_GET['id'])){
 
 	$id=$_GET['id'];

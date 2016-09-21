@@ -1,4 +1,8 @@
 ﻿<?php
+require_once 'config/app.php';
+
+Guard::protect();
+
 if(isset($_POST) && !empty($_POST)){
 	$name=stripcslashes($_POST['name']);
 	$db->query("INSERT INTO contact_list(name,user_id) VALUES(?,?)",[
@@ -34,7 +38,7 @@ $contact_lists=$db->query("SELECT c.* FROM contact_list as c INNER JOIN users as
 			<?php foreach($contact_lists as $contact_list){ ?>
 				<tr>
 					<td><?= $contact_list->name?></td>
-					<td><a href="contact?id=<?= $contact_list->id?>">Перейти</a></td>
+					<td><a href="contact.php?id=<?= $contact_list->id?>">Перейти</a></td>
 				</tr>
 			<?php } ?>
 		</tbody>

@@ -1,4 +1,8 @@
 ﻿<?php
+require_once('config/app.php');
+
+Guard::protect(false);
+
 	if(isset($_POST) && !empty($_POST)){
 		$name=stripcslashes($_POST['name']);
 		$password=stripcslashes(sha1($_POST['password']));
